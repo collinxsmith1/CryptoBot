@@ -74,7 +74,7 @@ class CryptoBotBackground(commands.Cog):
     @tasks.loop(hours=6.0)
     async def change_status(self):
         print("Renewed bot status")
-        action = discord.Game(f"/intro | {CVERSION}")
+        action = discord.Game(f"/crypto | {CVERSION}")
         await self.bot.change_presence(status=discord.Status.online, activity=action)
     
     @change_status.before_loop
@@ -184,7 +184,7 @@ class CryptoBot(discord.Cog):
         GUILD = TXCHAN.guild
         GUILDID = str(GUILD.id)
 
-        print('/intro list by {} in {} of {}'.format(MEM, TXCHAN, GUILD))
+        print('/crypto list by {} in {} of {}'.format(MEM, TXCHAN, GUILD))
 
         await ctx.defer()
         await asyncio.sleep(3)
